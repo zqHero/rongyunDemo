@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="CallKit-2.8.4">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/seal/build/intermediates/exploded-aar/cn.rongcloud.android/CallKit/2.8.4/res" />
+      <root url="jar://$PROJECT_DIR$/seal/build/intermediates/exploded-aar/cn.rongcloud.android/CallKit/2.8.4/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/cn.rongcloud.android/CallKit/2.8.4/c5948dcd67cf18bd80d96373fe4b05343c6a8ed9/CallKit-2.8.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

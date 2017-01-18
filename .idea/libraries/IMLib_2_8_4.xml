@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="IMLib-2.8.4">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/seal/build/intermediates/exploded-aar/cn.rongcloud.android/IMLib/2.8.4/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/seal/build/intermediates/exploded-aar/cn.rongcloud.android/IMLib/2.8.4/res" />
+      <root url="jar://$PROJECT_DIR$/seal/build/intermediates/exploded-aar/cn.rongcloud.android/IMLib/2.8.4/jars/libs/Rong_IMLib.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/cn.rongcloud.android/IMLib/2.8.4/9a4009ac754a13add45b30c1f62ec8ddee9cc29b/IMLib-2.8.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="IMKit-2.8.4">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/seal/build/intermediates/exploded-aar/cn.rongcloud.android/IMKit/2.8.4/res" />
+      <root url="jar://$PROJECT_DIR$/seal/build/intermediates/exploded-aar/cn.rongcloud.android/IMKit/2.8.4/jars/classes.jar!/" />
+      <root url="jar://$PROJECT_DIR$/seal/build/intermediates/exploded-aar/cn.rongcloud.android/IMKit/2.8.4/jars/libs/Rong_IMKit.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/cn.rongcloud.android/IMKit/2.8.4/3efc77b9d4c635e31e22ca31535e3679cfd37e57/IMKit-2.8.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
