@@ -313,7 +313,7 @@ public class MainActivity extends FragmentActivity implements
             mViewPager.setCurrentItem(0, false);
         }
     }
-
+    //----------------
     protected void initData() {
 
         final Conversation.ConversationType[] conversationTypes = {
