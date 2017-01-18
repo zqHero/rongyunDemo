@@ -323,7 +323,8 @@ public class MainActivity extends FragmentActivity implements
         };
 
         RongIM.getInstance().addUnReadMessageCountChangedObserver(this, conversationTypes);
-        getConversationPush();// 获取 push 的 id 和 target
+        // 获取 push 的 id 和 target
+        getConversationPush();
         getPushMessage();
     }
 
