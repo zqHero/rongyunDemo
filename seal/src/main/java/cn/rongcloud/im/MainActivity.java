@@ -57,10 +57,10 @@ public class MainActivity extends FragmentActivity implements
     public static ViewPager mViewPager;
     private List<Fragment> mFragment = new ArrayList<>();
     private ImageView moreImage,
-//            mImageChats,
+            mImageChats,
             mImageContact, mImageFind, mImageMe, mMineRed;
     private TextView
-//            mTextChats,
+            mTextChats,
             mTextContact, mTextFind, mTextMe;
     private DragPointView mUnreadNumView;
     private ImageView mSearchImageView;
@@ -95,11 +95,11 @@ public class MainActivity extends FragmentActivity implements
         RelativeLayout foundRLayout = (RelativeLayout) findViewById(R.id.seal_find);
         RelativeLayout mineRLayout = (RelativeLayout) findViewById(R.id.seal_me);
 
-//        mImageChats = (ImageView) findViewById(R.id.tab_img_chats);
+        mImageChats = (ImageView) findViewById(R.id.tab_img_chats);
         mImageContact = (ImageView) findViewById(R.id.tab_img_contact);
         mImageFind = (ImageView) findViewById(R.id.tab_img_find);
         mImageMe = (ImageView) findViewById(R.id.tab_img_me);
-//        mTextChats = (TextView) findViewById(R.id.tab_text_chats);
+        mTextChats = (TextView) findViewById(R.id.tab_text_chats);
         mTextContact = (TextView) findViewById(R.id.tab_text_contact);
         mTextFind = (TextView) findViewById(R.id.tab_text_find);
         mTextMe = (TextView) findViewById(R.id.tab_text_me);
@@ -220,11 +220,11 @@ public class MainActivity extends FragmentActivity implements
     }
 
     private void changeTextViewColor() {
-//        mImageChats.setBackgroundDrawable(getResources().getDrawable(R.drawable.tab_chat));
+        mImageChats.setBackgroundDrawable(getResources().getDrawable(R.drawable.tab_chat));
         mImageContact.setBackgroundDrawable(getResources().getDrawable(R.drawable.tab_contacts));
         mImageFind.setBackgroundDrawable(getResources().getDrawable(R.drawable.tab_found));
         mImageMe.setBackgroundDrawable(getResources().getDrawable(R.drawable.tab_me));
-//        mTextChats.setTextColor(Color.parseColor("#abadbb"));
+        mTextChats.setTextColor(Color.parseColor("#abadbb"));
         mTextContact.setTextColor(Color.parseColor("#abadbb"));
         mTextFind.setTextColor(Color.parseColor("#abadbb"));
         mTextMe.setTextColor(Color.parseColor("#abadbb"));
@@ -234,8 +234,8 @@ public class MainActivity extends FragmentActivity implements
         switch (position) {
             case 0:
                 title_id_txt.setText("社区");
-//                mTextChats.setTextColor(Color.parseColor("#0099ff"));
-//                mImageChats.setBackgroundDrawable(getResources().getDrawable(R.drawable.tab_chat_hover));
+                mTextChats.setTextColor(Color.parseColor("#0099ff"));
+                mImageChats.setBackgroundDrawable(getResources().getDrawable(R.drawable.tab_chat_hover));
                 break;
             case 1:
                 title_id_txt.setText("蓝皮书");

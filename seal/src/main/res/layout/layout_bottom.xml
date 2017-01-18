@@ -40,25 +40,25 @@
                     android:layout_centerHorizontal="true"
                     android:gravity="center">
 
-                    <!--<ImageView-->
-                        <!--android:id="@+id/tab_img_chats"-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:layout_centerHorizontal="true"-->
-                        <!--android:background="#ffffff"-->
-                        <!--android:focusable="false"-->
-                        <!--android:scaleType="centerInside" />-->
+                    <ImageView
+                        android:id="@+id/tab_img_chats"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:background="#ffffff"
+                        android:focusable="false"
+                        android:scaleType="centerInside" />
 
-                    <!--<TextView-->
-                        <!--android:id="@+id/tab_text_chats"-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:layout_below="@id/tab_img_chats"-->
-                        <!--android:layout_centerHorizontal="true"-->
-                        <!--android:layout_marginTop="2dp"-->
-                        <!--android:text="社区"-->
-                        <!--android:textColor="#abadbb"-->
-                        <!--android:textSize="12sp" />-->
+                    <TextView
+                        android:id="@+id/tab_text_chats"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tab_img_chats"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="2dp"
+                        android:text="社区"
+                        android:textColor="#abadbb"
+                        android:textSize="12sp" />
 
                 </RelativeLayout>
 
@@ -74,9 +74,7 @@
                     android:textSize="12sp"
                     android:visibility="invisible" />
 
-
             </FrameLayout>
-
 
         </RelativeLayout>
 

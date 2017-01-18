@@ -128,11 +128,13 @@ public class SealAppContext implements RongIM.ConversationListBehaviorListener,
         RongIM.setGroupInfoProvider(this, true);
         RongIM.setLocationProvider(this);//设置地理位置提供者,不用位置的同学可以注掉此行代码
         setInputProvider();
-        //setUserInfoEngineListener();//移到SealUserInfoManager
+        //setUserInfoEngineListener();
+        // 移到SealUserInfoManager
         setReadReceiptConversationType();
         RongIM.getInstance().enableNewComingMessageIcon(true);
         RongIM.getInstance().enableUnreadMessageIcon(true);
-        //RongIM.setGroupUserInfoProvider(this, true);//seal app暂时未使用这种方式,目前使用UserInfoProvider
+        //RongIM.setGroupUserInfoProvider(this, true);
+        // seal app暂时未使用这种方式,目前使用UserInfoProvider
         BroadcastManager.getInstance(mContext).addAction(SealConst.EXIT, new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
@@ -141,10 +143,11 @@ public class SealAppContext implements RongIM.ConversationListBehaviorListener,
         });
     }
 
+    //聊天类型：
     private void setReadReceiptConversationType() {
         Conversation.ConversationType[] types = new Conversation.ConversationType[] {
-            Conversation.ConversationType.PRIVATE,
-            Conversation.ConversationType.GROUP,
+            Conversation.ConversationType.PRIVATE,  //私聊
+            Conversation.ConversationType.GROUP, //
             Conversation.ConversationType.DISCUSSION
         };
         RongIM.getInstance().setReadReceiptConversationTypeList(types);
@@ -199,7 +202,6 @@ public class SealAppContext implements RongIM.ConversationListBehaviorListener,
                         e.printStackTrace();
                     }
                     RongIM.getInstance().startPrivateChat(context, uiConversation.getConversationSenderId(), bean.getSourceUserNickname());
-
                 }
             } else {
                 context.startActivity(new Intent(context, NewFriendListActivity.class));
@@ -211,9 +213,42 @@ public class SealAppContext implements RongIM.ConversationListBehaviorListener,
 
     @Override
     public boolean onReceived(Message message, int i) {
+
+        // conversationType:PRIVATE,
+        // targetId:DYQP80kFc,
+        // messageId:11,
+        // messageDirection:RECEIVE,
+        // senderUserId:DYQP80kFc,
+        // receivedStatus:io.rong.imlib.model.Message$ReceivedStatus@4a9fd5e4,
+        // sentStatus:SENT,receivedTime：1484736559048,
+        // sentTime:1484736559282,objectName:RC:TxtMsg,
+        // content:io.rong.message.TextMessage@4a9fd564,
+        // extra:null,readReceiptInfo:io.rong.imlib.model.ReadReceiptInfo@4a9fd64c,
+        // UId:5CR2-CFOM-84QE-OS2O.
+
+        if(message!=null){
+            Log.i("info","conversationType:"+message.getConversationType()+"," +
+                    "targetId:"+message.getTargetId()+"," +
+                    "messageId:"+message.getMessageId()+"," +
+                    "messageDirection:"+message.getMessageDirection()+"," +
+                    "senderUserId:"+message.getSenderUserId()+"," +
+                    "receivedStatus:"+message.getReceivedStatus()+"," +
+                    "sentStatus:"+message.getSentStatus()+"," +
+                    "receivedTime："+message.getReceivedTime()+"," +
+                    "sentTime:"+message.getSentTime()+"," +
+                    "objectName:"+message.getObjectName()+"," +
+                    "content:"+message.getContent()+"," +
+                    "extra:"+message.getExtra()+"," +
+                    "readReceiptInfo:"+message.getReadReceiptInfo()+"," +
+                    "UId:"+message.getUId()+".");
+        }else{
+            Log.i("info","消息是空的");
+        }
+
         //TODO  接收到消息 后发送广播
         MessageContent messageContent = message.getContent();
         if (messageContent instanceof ContactNotificationMessage) {
+            Log.i("info","消息属于：ContactNotificationMessage类。");
             ContactNotificationMessage contactNotificationMessage = (ContactNotificationMessage) messageContent;
             if (contactNotificationMessage.getOperation().equals("Request")) {
                 //对方发来好友邀请
@@ -249,8 +284,11 @@ public class SealAppContext implements RongIM.ConversationListBehaviorListener,
             BroadcastManager.getInstance(mContext).sendBroadcast(UPDATE_RED_DOT);
             }*/
         } else if (messageContent instanceof GroupNotificationMessage) {
+            Log.i("info","消息属于：GroupNotificationMessage类。");
             GroupNotificationMessage groupNotificationMessage = (GroupNotificationMessage) messageContent;
-            NLog.e("onReceived:" + groupNotificationMessage.getMessage());
+
+            Log.i("info", groupNotificationMessage.getMessage());
+
             String groupID = message.getTargetId();
             GroupNotificationMessageData data = null;
             try {
@@ -274,7 +312,7 @@ public class SealAppContext implements RongIM.ConversationListBehaviorListener,
                                     RongIM.getInstance().removeConversation(Conversation.ConversationType.GROUP, message.getTargetId(), new RongIMClient.ResultCallback<Boolean>() {
                                         @Override
                                         public void onSuccess(Boolean aBoolean) {
-                                            Log.e("SealAppContext", "Conversation remove successfully.");
+                                            Log.i("info", "Conversation remove successfully.");
                                         }
 
                                         @Override
@@ -318,10 +356,11 @@ public class SealAppContext implements RongIM.ConversationListBehaviorListener,
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
-
         } else if (messageContent instanceof ImageMessage) {
             //ImageMessage imageMessage = (ImageMessage) messageContent;
+            Log.i("info","消息属于：ImageMessage类。");
+        }else{
+            Log.i("info","消息属于其他类型。");
         }
         return false;
     }
